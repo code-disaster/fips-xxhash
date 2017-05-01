@@ -1,0 +1,9 @@
+#
+# fips-xxhash
+#
+---
+exports:
+    header-dirs:
+        - xxHash
+    modules:
+        xxhash: .
