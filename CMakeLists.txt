@@ -16,6 +16,9 @@ fips_begin_lib(xxhash)
         xxhash.h
         xxhash.c
     )
+    if (FIPS_MSVC)
+        fips_vs_disable_warnings(4005)
+    endif()
 fips_end_lib()
 
 if (NOT FIPS_IMPORT)
