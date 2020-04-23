@@ -6,7 +6,8 @@ if (NOT FIPS_IMPORT)
     cmake_minimum_required(VERSION 2.8)
     get_filename_component(FIPS_ROOT_DIR "../fips" ABSOLUTE)
     include("${FIPS_ROOT_DIR}/cmake/fips.cmake")
-    fips_setup(PROJECT fips-xxhash)
+    project(fips-xxhash)
+    fips_setup()
 endif()
 
 fips_begin_lib(xxhash)
@@ -16,9 +17,6 @@ fips_begin_lib(xxhash)
         xxhash.h
         xxhash.c
     )
-    if (FIPS_MSVC)
-        fips_vs_disable_warnings(4005)
-    endif()
 fips_end_lib()
 
 if (NOT FIPS_IMPORT)
